@@ -42,8 +42,13 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/useEffect">
-                useEffect
+              <Link className="nav-link" to="/photos">
+                Photos
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/users">
+                Users
               </Link>
             </li>
             <li className="nav-item">

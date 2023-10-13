@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Form from "./pages/Form";
 import Home from "./pages/Home";
 import UseEffectFetchExample from "./components/UseEffectFetchExample";
+import Users from "./components/Users";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="form" element={<Form />} />
           <Route path="useState" element={<UseStateHookExample />} />
-          <Route path="useEffect" element={<UseEffectFetchExample />} />
+          <Route path="photos" element={<UseEffectFetchExample />} />
+          <Route path="users" element={<Users />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

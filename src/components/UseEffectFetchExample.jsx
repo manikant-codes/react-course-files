@@ -1,28 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useFetch from "../customHooks/useFetch";
 import AlbumArt from "./AlbumArt";
 
 function UseEffectFetchExample() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    setLoading(true);
-
-    fetch("https://jsonplaceholder.typicode.com/photos")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setData(data.slice(0, 50));
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  const [data, loading, error] = useFetch(
+    "https://jsonplaceholder.typicode.com/photos"
+  );
 
   if (loading)
     return (
@@ -47,10 +30,12 @@ function UseEffectFetchExample() {
 
   console.log(data);
 
+  const photos = data.slice(0, 50);
+
   return (
     <div className="container">
       <div class="row gx-5 gy-5">
-        {data.map((item, index) => {
+        {photos.map((item, index) => {
           return <AlbumArt key={item.id} item={item} />;
         })}
       </div>
