@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Form from "./pages/Form";
 import Home from "./pages/Home";
+import UseEffectFetchExample from "./components/UseEffectFetchExample";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="form" element={<Form />} />
           <Route path="useState" element={<UseStateHookExample />} />
-          <Route path="useEffect" element={<UseEffectHookExample />} />
+          <Route path="useEffect" element={<UseEffectFetchExample />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

@@ -13,7 +13,7 @@ function UseEffectHookExample() {
   console.log("Component Rendered");
 
   return (
-    <div className="container">
+    <div className="container" style={{ display: "flex", gap: "16px" }}>
       <button onClick={() => setCount((c) => c - 1)}>-</button>
       <h1>{count}</h1>
       <button onClick={() => setCount((c) => c + 1)}>+</button>
