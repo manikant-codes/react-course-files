@@ -1,0 +1,22 @@
+.carouselContainer {
+  height: 85vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carouselContainer > div {
+  height: 100%;
+  width: 100%;
+}
+
+.carouselContainer > div > div {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carouselContainer > div > div > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

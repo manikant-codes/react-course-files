@@ -5,7 +5,7 @@ function initialize() {
   return 0;
 }
 
-function UseStateHookExample() {
+function UseStateDemo() {
   const [count, setCount] = useState(initialize);
 
   const increment = () => {
@@ -39,4 +39,4 @@ function UseStateHookExample() {
   );
 }
 
-export default UseStateHookExample;
+export default UseStateDemo;

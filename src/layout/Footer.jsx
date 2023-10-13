@@ -4,8 +4,8 @@ function Footer() {
   return (
     <div>
       <div>
-        <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <p className="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
+        <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 px-2 border-top w-100">
+          <p className="col-md-4 mb-0 text-muted">© 2022 Learning React, Inc</p>
 
           <a
             href="/"
@@ -19,27 +19,12 @@ function Footer() {
           <ul className="nav col-md-4 justify-content-end">
             <li className="nav-item">
               <a href="#" className="nav-link px-2 text-muted">
-                Home
+                Privacy Policy
               </a>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link px-2 text-muted">
-                Features
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#" className="nav-link px-2 text-muted">
-                Pricing
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#" className="nav-link px-2 text-muted">
-                FAQs
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#" className="nav-link px-2 text-muted">
-                About
+                Contact
               </a>
             </li>
           </ul>

@@ -2,42 +2,50 @@ import React, { useState } from "react";
 import ImageSection from "./ImageSection";
 import InfoSection from "./InfoSection";
 
-function ImageFirstRow(props) {
+function ImageFirst(props) {
   return (
-    <>
+    <div className="row">
       <ImageSection image={props.image} />
       <InfoSection
-        content={props.ramesh}
+        title={props.title}
+        description={props.description}
+        content={props.content}
         setIsImageFirst={props.setIsImageFirst}
       />
-    </>
+    </div>
   );
 }
 
-function InfoFirstRow(props) {
+function InfoFirst(props) {
   return (
-    <>
+    <div className="row">
       <InfoSection
-        content={props.ramesh}
+        title={props.title}
+        description={props.description}
+        content={props.content}
         setIsImageFirst={props.setIsImageFirst}
       />
       <ImageSection image={props.image} />
-    </>
+    </div>
   );
 }
 
-function InfoRow(props) {
+function Row(props) {
   const [isImageFirst, setIsImageFirst] = useState(props.imageFirst);
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "50% 50%" }}>
+    <div className="">
       {isImageFirst ? (
-        <ImageFirstRow
+        <ImageFirst
+          title={props.title}
+          description={props.description}
           content={props.content}
           image={props.image}
           setIsImageFirst={setIsImageFirst}
         />
       ) : (
-        <InfoFirstRow
+        <InfoFirst
+          title={props.title}
+          description={props.description}
           content={props.content}
           image={props.image}
           setIsImageFirst={setIsImageFirst}
@@ -47,4 +55,4 @@ function InfoRow(props) {
   );
 }
 
-export default InfoRow;
+export default Row;

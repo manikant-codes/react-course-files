@@ -1,8 +1,8 @@
 import React from "react";
-import useFetch from "../customHooks/useFetch";
-import AlbumArt from "./AlbumArt";
+import useFetch from "../../../customHooks/useFetch";
+import Card from "./Card";
 
-function UseEffectFetchExample() {
+function UseEffectFetchDemo() {
   const [data, loading, error] = useFetch(
     "https://jsonplaceholder.typicode.com/photos"
   );
@@ -36,11 +36,11 @@ function UseEffectFetchExample() {
     <div className="container">
       <div class="row gx-5 gy-5">
         {photos.map((item, index) => {
-          return <AlbumArt key={item.id} item={item} />;
+          return <Card key={item.id} item={item} />;
         })}
       </div>
     </div>
   );
 }
 
-export default UseEffectFetchExample;
+export default UseEffectFetchDemo;

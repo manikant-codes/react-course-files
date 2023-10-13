@@ -1,14 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import UseEffectHookExample from "./components/UseEffectHookExample";
-import UseStateHookExample from "./components/UseStateHookExample";
+import UseEffectCounterDemo from "./components/demos/UseEffectCounterDemo";
+import UseStateDemo from "./components/demos/UseStateDemo";
+import UseEffectFetchDemo from "./components/demos/useEffectFetchDemo/UseEffectFetchDemo";
 import Layout from "./layout/Layout";
 import PageNotFound from "./pages/404";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Form from "./pages/Form";
 import Home from "./pages/Home";
-import UseEffectFetchExample from "./components/UseEffectFetchExample";
-import Users from "./components/Users";
 
 function App() {
   return (
@@ -19,14 +18,13 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="form" element={<Form />} />
-          <Route path="useState" element={<UseStateHookExample />} />
-          <Route path="photos" element={<UseEffectFetchExample />} />
-          <Route path="users" element={<Users />} />
+          <Route path="useState" element={<UseStateDemo />} />
+          <Route path="useEffectCounter" element={<UseEffectCounterDemo />} />
+          <Route path="useEffectFetch" element={<UseEffectFetchDemo />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
-    // <UseStateHookExample />
   );
 }
 

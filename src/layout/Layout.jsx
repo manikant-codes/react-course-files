@@ -1,13 +1,15 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 function Layout(props) {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <div className="w-100 overflow-hidden">
+        <Outlet />
+      </div>
       <Footer />
     </>
   );

@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Navbar
+          Learning React
         </a>
         <button
           className="navbar-toggler"
@@ -31,43 +31,48 @@ function Navbar() {
                 About
               </Link>
             </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Demos
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link className="dropdown-item" to="/useState">
+                    useState
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/useEffectCounter">
+                    useEffect Counter
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/useEffectFetch">
+                    useEffect Fetch
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/form">
+                    Form
+                  </Link>
+                </li>
+              </ul>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contact">
                 Contact
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/useState">
-                useState
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/photos">
-                Photos
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/users">
-                Users
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/form">
-                Form
-              </Link>
-            </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </nav>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function AlbumArt(props) {
+function Card(props) {
   const { item } = props;
   return (
     <div className="col-3">
@@ -14,4 +14,4 @@ function AlbumArt(props) {
   );
 }
 
-export default AlbumArt;
+export default Card;
