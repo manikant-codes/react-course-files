@@ -8,6 +8,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Form from "./pages/Form";
 import Home from "./pages/Home";
+import UseRefPersistanceDemo from "./components/demos/useRefDemo/useRefPersistanceDemo";
+import UseRefDomDemo from "./components/demos/useRefDemo/useRefDomDemo";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="useState" element={<UseStateDemo />} />
           <Route path="useEffectCounter" element={<UseEffectCounterDemo />} />
           <Route path="useEffectFetch" element={<UseEffectFetchDemo />} />
+          <Route path="useRefPersistance" element={<UseRefPersistanceDemo />} />
+          <Route path="useRefDom" element={<UseRefDomDemo />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

@@ -61,6 +61,19 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/useRefPersistance">
+                    useRef Persistance
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/useRefDom">
+                    useRef DOM
+                  </Link>
+                </li>
+                <li>
                   <Link className="dropdown-item" to="/form">
                     Form
                   </Link>
