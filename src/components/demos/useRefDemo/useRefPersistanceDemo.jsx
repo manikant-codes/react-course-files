@@ -2,15 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 
 function UseRefPersistanceDemo() {
   const [inputValue, setInputValue] = useState("");
-  const prevState = useRef(null);
-  const count = useRef(0);
-
-  // const [renderCount, setRenderCount] = useState(0);
+  const prevStateRef = useRef("");
 
   useEffect(() => {
-    count.current++;
-    prevState.current = inputValue;
-    // setRenderCount((prevRenderCount) => prevRenderCount + 1);
+    prevStateRef.current = inputValue;
   }, [inputValue]);
 
   console.log("Rendered");
@@ -24,17 +19,7 @@ function UseRefPersistanceDemo() {
         id="input"
       />
 
-      <button
-        onClick={() => {
-          count.current++;
-          console.log(count);
-        }}
-      >
-        ++
-      </button>
-      <h1>Render Count: {count.current}</h1>
-      <h1>{prevState.current}</h1>
-      {/* <h1>Render Count: {renderCount}</h1> */}
+      <h1>Prev State: {prevStateRef.current}</h1>
     </>
   );
 }

@@ -1,19 +1,20 @@
 import React, { useRef } from "react";
 
 function UseRefDomDemo() {
-  const inputElement = useRef(null);
+  const inputElementRef = useRef(null);
 
-  console.log("inputElement", inputElement);
+  console.log("inputElement", inputElementRef);
 
   const focusInput = () => {
-    console.log("inputElement", inputElement);
-    inputElement.current.focus();
-    inputElement.current.size = 500;
+    console.log("inputElement", inputElementRef);
+    inputElementRef.current.focus();
+    inputElementRef.current.size = 500;
+    inputElementRef.current.value = 500;
   };
 
   return (
     <>
-      <input type="text" id="input" ref={inputElement} />
+      <input type="text" id="input" ref={inputElementRef} />
       <button onClick={focusInput}>Focus Input</button>
     </>
   );
