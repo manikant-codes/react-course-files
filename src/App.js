@@ -8,8 +8,10 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Form from "./pages/Form";
 import Home from "./pages/Home";
-import UseRefPersistanceDemo from "./components/demos/useRefDemo/useRefPersistanceDemo";
-import UseRefDomDemo from "./components/demos/useRefDemo/useRefDomDemo";
+import UseRefPersistanceDemo from "./components/demos/useRefDemo/UseRefPersistanceDemo";
+import UseRefDomDemo from "./components/demos/useRefDemo/UseRefDomDemo";
+import UseRefDomDemoTwo from "./components/demos/useRefDemo/UseRefDomDemoTwo";
+import UseCallbackDemo from "./components/demos/useCallbackDemo/UseCallbackDemo";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="useEffectFetch" element={<UseEffectFetchDemo />} />
           <Route path="useRefPersistance" element={<UseRefPersistanceDemo />} />
           <Route path="useRefDom" element={<UseRefDomDemo />} />
+          <Route path="useRefDomTwo" element={<UseRefDomDemoTwo />} />
+          <Route path="useCallback" element={<UseCallbackDemo />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

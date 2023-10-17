@@ -34,7 +34,7 @@ function UseEffectFetchDemo() {
 
   return (
     <div className="container">
-      <div class="row gx-5 gy-5">
+      <div className="row gx-5 gy-5">
         {photos.map((item, index) => {
           return <Card key={item.id} item={item} />;
         })}

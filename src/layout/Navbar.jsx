@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [scrollY, setScrollY] = useState(window.scrollY);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollY]);
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" ref={ref}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           Learning React
@@ -71,6 +86,16 @@ function Navbar() {
                 <li>
                   <Link className="dropdown-item" to="/useRefDom">
                     useRef DOM
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/useRefDomTwo">
+                    useRef DOM Scroll
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/useCallback">
+                    useCallback
                   </Link>
                 </li>
                 <li>
