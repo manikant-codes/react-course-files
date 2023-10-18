@@ -99,6 +99,11 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
+                  <Link className="dropdown-item" to="/memo">
+                    memo
+                  </Link>
+                </li>
+                <li>
                   <Link className="dropdown-item" to="/form">
                     Form
                   </Link>

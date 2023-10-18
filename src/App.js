@@ -12,6 +12,7 @@ import UseRefPersistanceDemo from "./components/demos/useRefDemo/UseRefPersistan
 import UseRefDomDemo from "./components/demos/useRefDemo/UseRefDomDemo";
 import UseRefDomDemoTwo from "./components/demos/useRefDemo/UseRefDomDemoTwo";
 import UseCallbackDemo from "./components/demos/useCallbackDemo/UseCallbackDemo";
+import MemoDemo from "./components/demos/memoDemo/MemoDemo";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="useRefDom" element={<UseRefDomDemo />} />
           <Route path="useRefDomTwo" element={<UseRefDomDemoTwo />} />
           <Route path="useCallback" element={<UseCallbackDemo />} />
+          <Route path="memo" element={<MemoDemo />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
