@@ -16,19 +16,9 @@ function Form() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "calc(100vh - 129px)",
-        background:
-          "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
-        color: "white",
-      }}
-    >
-      <div style={{ textAlign: "center" }}>
-        <h1 style={{ marginBottom: "32px" }}>Age Calculator</h1>
+    <div className="demoContainer">
+      <div className="demoWrapper" style={{ flexDirection: "column" }}>
+        <h2 style={{ marginBottom: "32px" }}>Age Calculator</h2>
         <form onSubmit={handleSubmit} style={{ display: "flex", gap: "8px" }}>
           <input
             type="number"
@@ -38,7 +28,9 @@ function Form() {
           />
           <button type="submit">Get Age</button>
         </form>
-        {age && <h2 style={{ marginTop: "32px" }}>Age: {age}</h2>}
+        {age && (
+          <p style={{ marginTop: "16px", fontSize: "1.5rem" }}>Age: {age}</p>
+        )}
       </div>
     </div>
   );

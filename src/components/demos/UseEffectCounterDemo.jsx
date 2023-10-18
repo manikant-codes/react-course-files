@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 function UseEffectCounterDemo() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log("Use Effect");
-    return () => {
-      console.log("Effect Clean Up");
-    };
+    setTimeout(() => {
+      setCount(count + 1);
+    }, 1000);
   }, [count]);
 
-  console.log("Component Rendered");
-
   return (
-    <div className="container" style={{ display: "flex", gap: "16px" }}>
-      <button onClick={() => setCount((c) => c - 1)}>-</button>
-      <h1>{count}</h1>
-      <button onClick={() => setCount((c) => c + 1)}>+</button>
+    <div className="demoContainer">
+      <div className="demoWrapper">
+        <FontAwesomeIcon icon={faClock} size="4x" color="#07a5cc" />
+        <h1 style={{ margin: "0px" }}>{count}</h1>
+      </div>
     </div>
   );
 }

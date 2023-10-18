@@ -11,16 +11,19 @@ function UseRefPersistanceDemo() {
   console.log("Rendered");
 
   return (
-    <>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        id="input"
-      />
-
-      <h1>Prev State: {prevStateRef.current}</h1>
-    </>
+    <div className="demoContainer">
+      <div className="demoWrapper" style={{ flexDirection: "column" }}>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          id="input"
+        />
+        <p style={{ fontWeight: "bold", fontSize: "1.25rem" }}>
+          Prev State: {prevStateRef.current}
+        </p>
+      </div>
+    </div>
   );
 }
 

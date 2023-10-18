@@ -8,15 +8,16 @@ function UseRefDomDemo() {
   const focusInput = () => {
     console.log("inputElement", inputElementRef);
     inputElementRef.current.focus();
-    inputElementRef.current.size = 500;
     inputElementRef.current.value = 500;
   };
 
   return (
-    <>
-      <input type="text" id="input" ref={inputElementRef} />
-      <button onClick={focusInput}>Focus Input</button>
-    </>
+    <div className="demoContainer">
+      <div className="demoWrapper">
+        <input type="text" id="input" ref={inputElementRef} />
+        <button onClick={focusInput}>Focus</button>
+      </div>
+    </div>
   );
 }
 

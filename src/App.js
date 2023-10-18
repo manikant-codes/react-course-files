@@ -6,7 +6,7 @@ import Layout from "./layout/Layout";
 import PageNotFound from "./pages/404";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Form from "./pages/Form";
+import Form from "./components/demos/Form";
 import Home from "./pages/Home";
 import UseRefPersistanceDemo from "./components/demos/useRefDemo/UseRefPersistanceDemo";
 import UseRefDomDemo from "./components/demos/useRefDemo/UseRefDomDemo";
