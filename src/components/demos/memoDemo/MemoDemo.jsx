@@ -5,8 +5,9 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function MemoDemo() {
   const [toDos, setToDos] = useState(["One", "Two"]);
+
   const [count, setCount] = useState(0);
-  console.log("MemoDemo Re-rendered");
+
   return (
     <div className="demoContainer">
       <div className="demoWrapper" style={{ flexDirection: "column" }}>

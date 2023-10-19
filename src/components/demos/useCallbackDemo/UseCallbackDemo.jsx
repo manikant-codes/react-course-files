@@ -8,12 +8,12 @@ function UseCallbackDemo() {
   const [todos, setTodos] = useState(["New Todo"]);
 
   const increment = () => {
-    setCount((c) => c + 1);
+    setCount((prevCount) => prevCount + 1);
   };
 
   const addTodo = useCallback(() => {
-    setTodos((t) => [...t, "New Todo"]);
-  }, [todos]);
+    setTodos((prevTodos) => [...prevTodos, "New Item"]);
+  }, []);
 
   return (
     <div className="demoContainer">
@@ -24,7 +24,6 @@ function UseCallbackDemo() {
           </button>
           <p style={{ margin: "0px" }}>Count: {count}</p>
         </div>
-        <hr />
         <div>
           <Todos todos={todos} addTodo={addTodo} />
         </div>

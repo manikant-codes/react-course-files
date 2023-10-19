@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 
-function Todos({ todos, addTodo }) {
+function Todos(props) {
+  const { todos, addTodo } = props;
   console.log("Child Rendered");
   return (
     <div>
