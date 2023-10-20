@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form() {
+function AgeCalculator() {
   const [birthYear, setBirthYear] = useState();
   const [age, setAge] = useState();
 
@@ -24,6 +24,7 @@ function Form() {
             type="number"
             name="birthYear"
             value={birthYear}
+            placeholder="Birth year e.g. 1992"
             onChange={handleChange}
           />
           <button type="submit">Get Age</button>
@@ -36,4 +37,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default AgeCalculator;

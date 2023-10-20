@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Form from "./components/demos/Form";
 import UseEffectCounterDemo from "./components/demos/UseEffectCounterDemo";
 import UseStateDemo from "./components/demos/UseStateDemo";
 import MemoDemo from "./components/demos/memoDemo/MemoDemo";
@@ -13,6 +12,7 @@ import Layout from "./layout/Layout";
 import PageNotFound from "./pages/404";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import AgeCalculator from "./components/demos/AgeCalculator";
 import Home from "./pages/Home";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="form" element={<Form />} />
+          <Route path="ageCalculator" element={<AgeCalculator />} />
           <Route path="useState" element={<UseStateDemo />} />
           <Route path="useEffectCounter" element={<UseEffectCounterDemo />} />
           <Route path="useEffectFetch" element={<UseEffectFetchDemo />} />
