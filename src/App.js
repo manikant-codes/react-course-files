@@ -14,6 +14,7 @@ import PageNotFound from "./pages/404";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import UseContextDemo from "./components/demos/useContext/UseContextDemo";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="useRefDomTwo" element={<UseRefDomDemoTwo />} />
           <Route path="useCallback" element={<UseCallbackDemo />} />
           <Route path="useMemo" element={<UseMemoDemo />} />
+          <Route path="useContext" element={<UseContextDemo />} />
           <Route path="memo" element={<MemoDemo />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>

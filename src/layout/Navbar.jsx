@@ -113,6 +113,11 @@ function Navbar() {
                     Form
                   </Link>
                 </li>
+                <li>
+                  <Link className="dropdown-item" to="/useContext">
+                    useContext
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="nav-item">
