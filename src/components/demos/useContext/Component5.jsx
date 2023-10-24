@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { UserContext } from "./UseContextDemo";
+import React from "react";
+import { useUser } from "./UserProvider";
 
 function Component5() {
-  const userName = useContext(UserContext);
-  return <div>Hello, {userName}!</div>;
+  const objUser = useUser();
+  return <div>Hello, {objUser.user}!</div>;
 }
 
 export default Component5;

@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "../components/home/carousel/Carousel";
 import Row from "../components/home/row/Row";
+import UserProvider from "../components/demos/useContext/UserProvider";
 
 function Home() {
   const names = ["Vicky", "Chintu", "Jassi", "Baloo"];
@@ -19,7 +20,7 @@ function Home() {
   );
 
   return (
-    <>
+    <UserProvider>
       <Carousel arrImages={images} />
       <Row
         title="First Row"
@@ -39,7 +40,7 @@ function Home() {
         imageFirst
         image="https://images.unsplash.com/photo-1565120130276-dfbd9a7a3ad7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
       />
-    </>
+    </UserProvider>
   );
 }
 
