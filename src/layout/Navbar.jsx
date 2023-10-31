@@ -20,7 +20,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary" ref={ref}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           Learning React
         </a>
         <button
@@ -47,15 +47,14 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <span
                 className="nav-link dropdown-toggle"
-                href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Demos
-              </a>
+                Concepts Demo
+              </span>
               <ul className="dropdown-menu">
                 <li>
                   <Link className="dropdown-item" to="/useState">
@@ -94,6 +93,9 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
                   <Link className="dropdown-item" to="/useCallback">
                     useCallback
                   </Link>
@@ -109,8 +111,11 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/form">
-                    Form
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/ageCalculator">
+                    Age Calculator
                   </Link>
                 </li>
                 <li>

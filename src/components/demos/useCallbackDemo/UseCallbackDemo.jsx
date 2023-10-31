@@ -1,7 +1,8 @@
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useCallback, useState } from "react";
-import Todos from "./Todos";
+import styles from "../../../styles/UseCallbackDemo.module.css";
+import ToDos from "./ToDos";
 
 function UseCallbackDemo() {
   const [count, setCount] = useState(0);
@@ -18,14 +19,14 @@ function UseCallbackDemo() {
   return (
     <div className="demoContainer">
       <div className="demoWrapper" style={{ gap: "32px" }}>
-        <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+        <div className={`${styles.counterWrapper}`}>
           <button onClick={increment}>
             <FontAwesomeIcon icon={faPlus} />
           </button>
           <p style={{ margin: "0px" }}>Count: {count}</p>
         </div>
         <div>
-          <Todos todos={todos} addTodo={addTodo} />
+          <ToDos todos={todos} addTodo={addTodo} />
         </div>
       </div>
     </div>
