@@ -114,6 +114,14 @@ function Navbar() {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
+                  <Link className="dropdown-item" to="/useReducerCounterDemo">
+                    useReducer Counter
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
                   <Link className="dropdown-item" to="/ageCalculator">
                     Age Calculator
                   </Link>

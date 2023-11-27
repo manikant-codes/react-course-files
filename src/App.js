@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AgeCalculator from "./components/demos/AgeCalculator";
 import Home from "./pages/Home";
+import UseReducerCounterDemo from "./components/demos/useReducerDemo/UseReducerCounterDemo";
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
           <Route path="useRefDomTwo" element={<UseRefDomDemoTwo />} />
           <Route path="useCallback" element={<UseCallbackDemo />} />
           <Route path="useMemo" element={<UseMemoDemo />} />
+          <Route
+            path="useReducerCounterDemo"
+            element={<UseReducerCounterDemo />}
+          />
           <Route path="memo" element={<MemoDemo />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
