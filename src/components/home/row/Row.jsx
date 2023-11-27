@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ImageSection from "./ImageSection";
 import InfoSection from "./InfoSection";
+import { useUser } from "../../demos/useContext/UserProvider";
 
 function ImageFirst(props) {
   return (
@@ -32,6 +33,7 @@ function InfoFirst(props) {
 
 function Row(props) {
   const [isImageFirst, setIsImageFirst] = useState(props.imageFirst);
+
   return (
     <div className="">
       {isImageFirst ? (

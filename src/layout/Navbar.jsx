@@ -126,6 +126,21 @@ function Navbar() {
                     Age Calculator
                   </Link>
                 </li>
+                <li>
+                  <Link className="dropdown-item" to="/useContext">
+                    useContext
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/useReducerCounter">
+                    useReducer Counter
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/useReducerToDo">
+                    useReducer ToDo
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="nav-item">
