@@ -17,6 +17,7 @@ import Home from "./pages/Home";
 import UseContextDemo from "./components/demos/useContext/UseContextDemo";
 import UseReducerCounterDemo from "./components/demos/useReducer/UseReducerCounterDemo";
 import UseReducerToDoDemo from "./components/demos/useReducer/UseReducerToDoDemo";
+import ClassComponent from "./components/demos/classComponents/ClassComponents";
 
 function App() {
   return (
@@ -38,6 +39,10 @@ function App() {
           <Route path="useContext" element={<UseContextDemo />} />
           <Route path="useReducerCounter" element={<UseReducerCounterDemo />} />
           <Route path="useReducerToDo" element={<UseReducerToDoDemo />} />
+          <Route
+            path="classcomponents"
+            element={<ClassComponent name="Zabuza" />}
+          />
           <Route path="memo" element={<MemoDemo />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>

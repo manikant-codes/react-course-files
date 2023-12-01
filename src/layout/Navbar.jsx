@@ -141,6 +141,11 @@ function Navbar() {
                     useReducer ToDo
                   </Link>
                 </li>
+                <li>
+                  <Link className="dropdown-item" to="/classcomponents">
+                    Class Components
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="nav-item">
