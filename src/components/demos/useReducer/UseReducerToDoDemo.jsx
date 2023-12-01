@@ -15,11 +15,17 @@ function reducer(state, action) {
     case TODO_ACTIONS.ADD:
       return {
         ...state,
-        todos: [...state.todos, { id: Date.now(), task: state.input }],
+        todos: [
+          ...state.todos,
+          { id: Date.now(), task: state.input, isCompleted: false },
+        ],
       };
     case TODO_ACTIONS.DELETE: {
-      const updatedToDos = state.todos.filter((item, index) => {
-        return item.id !== action.payload;
+      const updatedToDos = state.todos.filter((item) => {
+        if(item.id === action.payload) {
+          return false;
+        }
+        return true;
       });
       return {
         ...state,
