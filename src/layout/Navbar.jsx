@@ -142,7 +142,7 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/welcome">
+                  <Link className="dropdown-item" to="/classcomponents">
                     Class Components
                   </Link>
                 </li>
