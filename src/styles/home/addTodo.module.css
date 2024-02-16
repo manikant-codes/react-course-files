@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.container input {
+  flex-grow: 1;
+  border-radius: 32px;
+  border: solid 0.25px black;
+  padding: 6px 12px;
+}

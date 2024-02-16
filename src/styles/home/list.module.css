@@ -1,0 +1,23 @@
+.container {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+.innerContainer {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: #bbdefb;
+  border-radius: 32px;
+  padding: 24px;
+}
