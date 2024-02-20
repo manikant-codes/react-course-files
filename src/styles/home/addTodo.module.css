@@ -8,6 +8,5 @@
 .container input {
   flex-grow: 1;
   border-radius: 32px;
-  border: solid 0.25px black;
   padding: 6px 12px;
 }

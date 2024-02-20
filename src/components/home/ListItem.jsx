@@ -1,12 +1,16 @@
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import styles from "../../styles/home/listItem.module.css";
+import React, { useEffect, useState } from "react";
 import { deleteTodo, updateTodo } from "../../services/apiServices";
+import styles from "../../styles/home/listItem.module.css";
 
 function ListItem(props) {
-  const [checked, setChecked] = useState(props.todo.isCompleted);
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    setChecked(props.todo.isCompleted);
+  }, [props.todo.isCompleted]);
 
   async function handleChecked(e) {
     await updateTodo(props.todo._id, {
@@ -14,6 +18,15 @@ function ListItem(props) {
       isCompleted: e.target.checked,
     });
 
+    const updatedTodos = props.todos.map((todo) => {
+      if (todo._id === props.todo._id) {
+        return { ...todo, isCompleted: !e.target.checked };
+      } else {
+        return todo;
+      }
+    });
+
+    props.setTodos(updatedTodos);
     setChecked(!e.target.checked);
   }
 

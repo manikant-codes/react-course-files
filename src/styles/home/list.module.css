@@ -6,7 +6,7 @@
   gap: 32px;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
+  background-color: #424242;
 }
 
 .innerContainer {
@@ -17,7 +17,7 @@
   gap: 8px;
   align-items: center;
   justify-content: center;
-  background-color: #bbdefb;
+  background-color: #f5f5f5;
   border-radius: 32px;
   padding: 24px;
 }

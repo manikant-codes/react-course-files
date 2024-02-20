@@ -14,7 +14,6 @@ function AddTodo(props) {
   async function handleAdd() {
     const result = await addTodo({ text: todo });
     props.setTodos([...props.todos, result.data]);
-    console.log(result);
   }
 
   return (

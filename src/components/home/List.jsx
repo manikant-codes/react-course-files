@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 import styles from "../../styles/home/list.module.css";
 import AddTodo from "./AddTodo";
-import { getAllTodos } from "../../services/apiServices";
+import { getAllTodos, updateTodo } from "../../services/apiServices";
 import Modal from "../common/Modal";
 import EditTodoForm from "./EditTodoForm";
 
 function List() {
   const [todos, setTodos] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [selectedTodo, setSelectedTodo] = useState(null);
 
-  console.log("rerendered");
+  const [selectedTodo, setSelectedTodo] = useState(null);
+  const [task, setTask] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+
+  console.log("todos", todos);
 
   useEffect(() => {
     async function getAll() {
@@ -26,7 +29,24 @@ function List() {
     setShowModal((prev) => !prev);
   }
 
-  function handleSubmit() {}
+  async function handleSubmit() {
+    const response = await updateTodo(selectedTodo._id, {
+      text: task,
+      isCompleted: isChecked,
+    });
+
+    const updatedTodos = todos.map((todo) => {
+      if (todo._id === selectedTodo._id) {
+        return { ...todo, isCompleted: isChecked, text: task };
+      } else {
+        return todo;
+      }
+    });
+
+    setTodos(updatedTodos);
+
+    handleCancel();
+  }
 
   if (!todos) return null;
 
@@ -52,9 +72,17 @@ function List() {
           title="Edit Todo"
           btnTextOk="Submit"
           btnTextCancel="Cancel"
-          content={<EditTodoForm selectedTodo={selectedTodo} />}
+          content={
+            <EditTodoForm
+              selectedTodo={selectedTodo}
+              isChecked={isChecked}
+              setIsChecked={setIsChecked}
+              task={task}
+              setTask={setTask}
+            />
+          }
           onCancel={handleCancel}
-          // onSubmit={}
+          onSubmit={handleSubmit}
         />
       )}
     </div>
