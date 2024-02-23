@@ -44,7 +44,7 @@ function ListItem(props) {
   }
 
   function handleUpdate() {
-    props.setShowModal((prev) => !prev);
+    props.setShowModal(true);
     props.setSelectedTodo(props.todo);
   }
 

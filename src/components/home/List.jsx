@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from "react";
-import ListItem from "./ListItem";
-import styles from "../../styles/home/list.module.css";
-import AddTodo from "./AddTodo";
 import { getAllTodos, updateTodo } from "../../services/apiServices";
+import styles from "../../styles/home/list.module.css";
 import Modal from "../common/Modal";
+import AddTodo from "./AddTodo";
 import EditTodoForm from "./EditTodoForm";
+import ListItem from "./ListItem";
 
 function List() {
   const [todos, setTodos] = useState(null);
   const [showModal, setShowModal] = useState(false);
-
-  const [selectedTodo, setSelectedTodo] = useState(null);
-  const [task, setTask] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
-
-  console.log("todos", todos);
 
   useEffect(() => {
     async function getAll() {
       const result = await getAllTodos();
       setTodos(result.data);
     }
-
     getAll();
   }, []);
 
+  // Update Modal
+  const [selectedTodo, setSelectedTodo] = useState(null);
+  const [task, setTask] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+
   function handleCancel() {
-    setShowModal((prev) => !prev);
+    setSelectedTodo(null);
+    setShowModal(false);
   }
 
   async function handleSubmit() {
@@ -52,7 +51,7 @@ function List() {
 
   return (
     <div className={styles.container}>
-      <AddTodo setTodos={setTodos} todos={todos} />
+      <AddTodo todos={todos} setTodos={setTodos} />
       <div className={styles.innerContainer}>
         {todos.map((todo) => {
           return (
@@ -70,8 +69,6 @@ function List() {
       {showModal && (
         <Modal
           title="Edit Todo"
-          btnTextOk="Submit"
-          btnTextCancel="Cancel"
           content={
             <EditTodoForm
               selectedTodo={selectedTodo}
@@ -81,8 +78,10 @@ function List() {
               setTask={setTask}
             />
           }
-          onCancel={handleCancel}
+          btnTextOk="Submit"
           onSubmit={handleSubmit}
+          btnTextCancel="Cancel"
+          onCancel={handleCancel}
         />
       )}
     </div>

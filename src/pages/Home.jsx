@@ -4,10 +4,10 @@ import Navbar from "../layout/Navbar";
 
 function Home() {
   return (
-    <div>
+    <>
       <Navbar />
       <List />
-    </div>
+    </>
   );
 }
 
