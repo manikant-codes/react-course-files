@@ -5,6 +5,7 @@ import Modal from "../common/Modal";
 import AddTodo from "./AddTodo";
 import EditTodoForm from "./EditTodoForm";
 import ListItem from "./ListItem";
+import FiltersBar from "./FiltersBar";
 
 function List() {
   const [todos, setTodos] = useState(null);
@@ -51,6 +52,7 @@ function List() {
 
   return (
     <div className={styles.container}>
+      <FiltersBar setTodos={setTodos} />
       <AddTodo todos={todos} setTodos={setTodos} />
       <div className={styles.innerContainer}>
         {todos.map((todo) => {

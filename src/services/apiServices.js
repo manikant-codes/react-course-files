@@ -1,5 +1,5 @@
-export async function getAllTodos() {
-  const response = await fetch("http://localhost:5000/todos");
+export async function getAllTodos(query = "") {
+  const response = await fetch("http://localhost:5000/todos" + query);
   const data = await response.json();
   return data;
 }
