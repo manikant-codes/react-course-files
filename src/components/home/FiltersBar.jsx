@@ -1,5 +1,5 @@
-import React from "react";
-import { useSearchParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { getAllTodos } from "../../services/apiServices";
 
 // text input
@@ -8,7 +8,26 @@ import { getAllTodos } from "../../services/apiServices";
 // select
 
 function FiltersBar() {
-  const [params, setParams] = useSearchParams({ text: "" });
+  const [params, setParams] = useSearchParams({});
+  const location = useLocation();
+  const [formState, setFormState] = useState({
+    task: "",
+    isCompleted: "false",
+    sort: "text",
+  });
+
+  function handleChange(e) {
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log("formState", formState, location.search);
+    setParams(formState);
+    console.log("params.entries()", Array.from(params.entries()));
+    const result = await getAllTodos(location.search);
+    console.log("result", result);
+  }
 
   return (
     <div
@@ -22,41 +41,41 @@ function FiltersBar() {
         bottom: 0,
       }}
     >
-      <div style={{ display: "flex", gap: "16px", flexDirection: "column" }}>
+      <form
+        style={{ display: "flex", gap: "16px", flexDirection: "column" }}
+        onSubmit={handleSubmit}
+      >
         <div>
           <p>Task</p>
           <input
+            name="task"
             type="text"
             style={{ marginTop: "8px" }}
-            value={params.get("text")}
-            onChange={(e) => {
-              setParams({ text: e.target.value });
-            }}
+            value={formState.task}
+            onChange={handleChange}
           />
         </div>
         <div>
           <p>See Completed</p>
-          <select name="" id="">
-            <option value="">Completed</option>
-            <option value="">Not Completed</option>
+          <select
+            name="isCompleted"
+            value={formState.isCompleted}
+            onChange={handleChange}
+          >
+            <option value="true">Completed</option>
+            <option value="false">Not Completed</option>
           </select>
         </div>
         <div>
           <p>Sort By</p>
-          <select name="" id="">
-            <option value="">Task Name</option>
-            <option value="">Date Created</option>
-            <option value="">Date Updated</option>
+          <select name="sort" value={formState.sort} onChange={handleChange}>
+            <option value="text">Task Name</option>
+            <option value="createdAt">Date Created</option>
+            <option value="updatedAt">Date Updated</option>
           </select>
         </div>
-        <button
-          onClick={async () => {
-            getAllTodos();
-          }}
-        >
-          Search
-        </button>
-      </div>
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 }
