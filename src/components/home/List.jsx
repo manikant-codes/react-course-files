@@ -1,67 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { getAllTodos, updateTodo } from "../../services/apiServices";
+import React, { useState } from "react";
+import useFetch from "../../customHooks/useFetch";
+import { getAllTodos } from "../../services/apiServices";
 import styles from "../../styles/home/list.module.css";
 import Modal from "../common/Modal";
 import AddTodo from "./AddTodo";
 import EditTodoForm from "./EditTodoForm";
-import ListItem from "./ListItem";
 import FiltersBar from "./FiltersBar";
+import ListItem from "./ListItem";
 
 function List() {
-  const [todos, setTodos] = useState(null);
   const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    async function getAll() {
-      const result = await getAllTodos();
-      setTodos(result.data);
-    }
-    getAll();
-  }, []);
-
-  // Update Modal
   const [selectedTodo, setSelectedTodo] = useState(null);
-  const [task, setTask] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
+  const { loading, data, error, setData } = useFetch(getAllTodos);
 
-  function handleCancel() {
-    setSelectedTodo(null);
-    setShowModal(false);
-  }
+  if (loading) return <h1>Loading...</h1>;
 
-  async function handleSubmit() {
-    const response = await updateTodo(selectedTodo._id, {
-      text: task,
-      isCompleted: isChecked,
-    });
-
-    const updatedTodos = todos.map((todo) => {
-      if (todo._id === selectedTodo._id) {
-        return { ...todo, isCompleted: isChecked, text: task };
-      } else {
-        return todo;
-      }
-    });
-
-    setTodos(updatedTodos);
-
-    handleCancel();
-  }
-
-  if (!todos) return null;
+  if ((!loading && error) || !data) return <h1>Something went wrong!</h1>;
 
   return (
     <div className={styles.container}>
-      <FiltersBar setTodos={setTodos} />
-      <AddTodo todos={todos} setTodos={setTodos} />
+      <FiltersBar setTodos={setData} />
+      <AddTodo todos={data} setTodos={setData} />
       <div className={styles.innerContainer}>
-        {todos.map((todo) => {
+        {data.map((todo) => {
           return (
             <ListItem
               key={todo._id}
               todo={todo}
-              todos={todos}
-              setTodos={setTodos}
+              todos={data}
+              setTodos={setData}
               setShowModal={setShowModal}
               setSelectedTodo={setSelectedTodo}
             />
@@ -74,16 +41,13 @@ function List() {
           content={
             <EditTodoForm
               selectedTodo={selectedTodo}
-              isChecked={isChecked}
-              setIsChecked={setIsChecked}
-              task={task}
-              setTask={setTask}
+              setShowModal={setShowModal}
+              setSelectedTodo={setSelectedTodo}
+              data={data}
+              setData={setData}
             />
           }
-          btnTextOk="Submit"
-          onSubmit={handleSubmit}
-          btnTextCancel="Cancel"
-          onCancel={handleCancel}
+          hideButtons
         />
       )}
     </div>

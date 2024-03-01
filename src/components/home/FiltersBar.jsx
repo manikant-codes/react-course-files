@@ -19,15 +19,19 @@ function FiltersBar(props) {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    // console.log("query 0", formState);
     let query = Object.entries(formState);
-    query = query.map((queryParam, index) => {
+    // console.log("query 1", query);
+    query = query.map((value, index) => {
       if (index === 0) {
-        if (!queryParam[1]) return "";
-        return `${queryParam[0]}=${queryParam[1].replaceAll(" ", "+")}`;
+        if (!value[1]) return "";
+        return `${value[0]}=${value[1].replaceAll(" ", "+")}`;
       }
-      return `${queryParam[0]}=${queryParam[1]}`;
+      return `${value[0]}=${value[1]}`;
     });
+    // console.log("query 2", query);
     query = query.join("&");
+    // console.log("query 3", query);
     const result = await getAllTodos(query);
     setTodos(result.data);
   }

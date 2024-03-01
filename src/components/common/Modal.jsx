@@ -9,10 +9,12 @@ function Modal(props) {
           <h2>{props.title}</h2>
         </div>
         <div className={styles.modalContentContainer}>{props.content}</div>
-        <div className={styles.modalFooterContainer}>
-          <button onClick={props.onCancel}>{props.btnTextCancel}</button>
-          <button onClick={props.onSubmit}>{props.btnTextOk}</button>
-        </div>
+        {!props.hideButtons && (
+          <div className={styles.modalFooterContainer}>
+            <button onClick={props.onCancel}>{props.btnTextCancel}</button>
+            <button onClick={props.onSubmit}>{props.btnTextOk}</button>
+          </div>
+        )}
       </div>
     </div>
   );
