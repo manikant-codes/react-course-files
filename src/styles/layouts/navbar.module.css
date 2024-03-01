@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  text-align: center;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 60px;
@@ -9,8 +9,6 @@
 
 .navbar h1 {
   margin: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: white;
+  font-size: 2rem;
 }

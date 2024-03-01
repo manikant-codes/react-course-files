@@ -1,20 +1,17 @@
 import React, { useState } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
 import { getAllTodos } from "../../services/apiServices";
+import styles from "../../styles/home/filtersBar.module.css";
 
-// text input
-// select input completed & uncompleted
-// sort
-// select
+const initialFormState = {
+  task: "",
+  isCompleted: "false",
+  sort: "text",
+};
 
-function FiltersBar() {
-  const [params, setParams] = useSearchParams({});
-  const location = useLocation();
-  const [formState, setFormState] = useState({
-    task: "",
-    isCompleted: "false",
-    sort: "text",
-  });
+function FiltersBar(props) {
+  const { setTodos } = props;
+
+  const [formState, setFormState] = useState(initialFormState);
 
   function handleChange(e) {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -22,59 +19,75 @@ function FiltersBar() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("formState", formState, location.search);
-    setParams(formState);
-    console.log("params.entries()", Array.from(params.entries()));
-    const result = await getAllTodos(location.search);
-    console.log("result", result);
+    let query = Object.entries(formState);
+    query = query.map((queryParam, index) => {
+      if (index === 0) {
+        if (!queryParam[1]) return "";
+        return `${queryParam[0]}=${queryParam[1].replaceAll(" ", "+")}`;
+      }
+      return `${queryParam[0]}=${queryParam[1]}`;
+    });
+    query = query.join("&");
+    const result = await getAllTodos(query);
+    setTodos(result.data);
+  }
+
+  async function handleClear() {
+    setFormState(initialFormState);
+    const result = await getAllTodos();
+    setTodos(result.data);
   }
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        left: 0,
-        top: 60,
-        padding: "32px",
-        backgroundColor: "#757575",
-        color: "black",
-        bottom: 0,
-      }}
-    >
-      <form
-        style={{ display: "flex", gap: "16px", flexDirection: "column" }}
-        onSubmit={handleSubmit}
-      >
+    <div className={styles.filtersBarContainer}>
+      <form className={styles.filtersForm} onSubmit={handleSubmit}>
         <div>
-          <p>Task</p>
+          <label htmlFor="task">Task</label>
           <input
+            id="task"
             name="task"
             type="text"
-            style={{ marginTop: "8px" }}
             value={formState.task}
             onChange={handleChange}
           />
         </div>
         <div>
-          <p>See Completed</p>
-          <select
-            name="isCompleted"
-            value={formState.isCompleted}
-            onChange={handleChange}
-          >
-            <option value="true">Completed</option>
-            <option value="false">Not Completed</option>
-          </select>
+          <label htmlFor="isCompleted">See Completed</label>
+          <div className={styles.customSelect}>
+            <select
+              id="isCompleted"
+              name="isCompleted"
+              value={formState.isCompleted}
+              onChange={handleChange}
+            >
+              <option value="true">Completed</option>
+              <option value="false">Not Completed</option>
+            </select>
+          </div>
         </div>
         <div>
-          <p>Sort By</p>
-          <select name="sort" value={formState.sort} onChange={handleChange}>
-            <option value="text">Task Name</option>
-            <option value="createdAt">Date Created</option>
-            <option value="updatedAt">Date Updated</option>
-          </select>
+          <label htmlFor="sort">Sort By</label>
+          <div className={styles.customSelect}>
+            <select
+              id="sort"
+              name="sort"
+              value={formState.sort}
+              onChange={handleChange}
+            >
+              <option value="text">Task Name</option>
+              <option value="createdAt">Date Created</option>
+              <option value="updatedAt">Date Updated</option>
+            </select>
+          </div>
         </div>
         <button type="submit">Search</button>
+        <button
+          type="button"
+          onClick={handleClear}
+          className={styles.clearAllBtn}
+        >
+          Clear All
+        </button>
       </form>
     </div>
   );

@@ -1,0 +1,91 @@
+.filtersBarContainer {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+  background-color: #616161;
+  color: black;
+  width: 200px;
+}
+
+.filtersForm {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.filtersForm div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filtersForm input[type="text"] {
+  width: 100%;
+}
+
+.filtersForm select {
+  width: 100%;
+  border-radius: 32px;
+  margin: 0px;
+}
+
+.filtersForm label {
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+.clearAllBtn {
+  background-color: #ff5722;
+}
+
+.clearAllBtn:hover {
+  background-color: #d84315;
+}
+
+/* Custom Select */
+.customSelect {
+  /* min-width: 350px; */
+  position: relative;
+}
+
+.customSelect select {
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+  width: 100%;
+  /* font-size: 1.15rem; */
+  /* padding: 0.675em 6em 0.675em 1em; */
+  background-color: #fff;
+  border: 1px solid #caced1;
+  border-radius: 32px;
+  color: #000;
+  cursor: pointer;
+}
+
+.customSelect::before,
+.customSelect::after {
+  --size: 0.3rem;
+  position: absolute;
+  content: "";
+  right: 1rem;
+  pointer-events: none;
+}
+
+/* .customSelect::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 40%;
+} */
+
+.customSelect::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 50%;
+}
+/* End Custom Select */
