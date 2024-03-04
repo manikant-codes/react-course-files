@@ -1,0 +1,56 @@
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  background-color: #e0f7fa;
+}
+
+.contentContainer {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.contentContainer h2 {
+  font-size: 3rem;
+}
+
+.contentContainer p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.contentContainer button {
+  width: fit-content;
+}
+
+.imgContainer {
+  padding: 32px;
+  height: calc(100vh - 60px);
+  width: 100%;
+}
+
+.imgContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 600px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    overflow: auto;
+  }
+
+  .imgContainer {
+    order: 1;
+    height: 400px;
+  }
+
+  .contentContainer {
+    order: 2;
+  }
+}
