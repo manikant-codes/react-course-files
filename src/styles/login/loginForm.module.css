@@ -1,0 +1,61 @@
+.loginFormContainer {
+  /* width: 100vw; */
+  height: calc(100vh - 60px - 32px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginForm {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #eeeeee;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.loginFormFieldsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.loginForm button {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.loginForm p,
+.loginForm a {
+  text-align: center;
+}
+
+.loginForm a {
+  text-decoration: none;
+  color: #ff5722;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.loginForm a::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff5722;
+  transform: scaleX(0);
+  transition: all 200ms ease;
+}
+
+.loginForm a:hover::before {
+  transform: scaleX(1);
+}

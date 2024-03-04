@@ -1,0 +1,9 @@
+.containerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerTitle h2 {
+  font-size: 2rem;
+}

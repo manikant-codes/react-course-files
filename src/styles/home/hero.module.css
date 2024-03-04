@@ -1,0 +1,40 @@
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  background-color: #fbe9e7;
+}
+
+.heroContentContainer {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.heroContentContainer h2 {
+  font-size: 3rem;
+}
+
+.heroContentContainer p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.heroContentContainer button {
+  width: fit-content;
+}
+
+.heroImgContainer {
+  width: 100%;
+  height: calc(100vh - 60px);
+  padding: 32px;
+}
+
+.heroImgContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

@@ -1,0 +1,53 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formFieldContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.formFieldContainer:nth-child(1) {
+  flex-direction: column;
+}
+
+.formFieldContainer input[type="checkbox"] {
+  height: 18px;
+  width: 18px;
+}
+
+.formFieldContainer input[type="text"] {
+  font-size: 1rem;
+}
+
+.outputPara {
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.successPara {
+  background-color: #c8e6c9;
+}
+
+.successPara svg {
+  color: #1b5e20;
+}
+
+.errorPara {
+  background-color: #ffccbc;
+}
+
+.errorPara svg {
+  color: #bf360c;
+}
+
+.submitBtn {
+  margin-top: 16px;
+  padding: 8px 16px;
+  justify-content: center;
+}

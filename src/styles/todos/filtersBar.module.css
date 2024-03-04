@@ -1,53 +1,39 @@
 .filtersBarContainer {
-  position: fixed;
-  top: 60px;
-  bottom: 0;
-  left: 0;
   padding: 16px;
-  background-color: #616161;
+  background-color: #bdbdbd;
   color: black;
-  width: 200px;
+  padding: 16px;
+  border-radius: 8px;
 }
 
 .filtersForm {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr auto auto;
   gap: 16px;
-  flex-direction: column;
 }
 
-.filtersForm div {
+.filtersForm button {
+  padding: 6px 12px;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.filtersForm input[type="text"] {
-  width: 100%;
-}
-
-.filtersForm select {
-  width: 100%;
-  border-radius: 32px;
-  margin: 0px;
-}
-
-.filtersForm label {
-  color: #e0e0e0;
-  font-size: 0.85rem;
-  margin-left: 8px;
-}
-
-.clearAllBtn {
+  align-items: center;
+  justify-content: center;
   background-color: #ff5722;
+  height: 32px;
 }
 
 .clearAllBtn:hover {
   background-color: #d84315;
 }
 
+.filtersForm button:nth-child(4) {
+  background-color: #424242;
+}
+.filtersForm button:nth-child(4):hover {
+  background-color: #212121;
+}
+
 /* Custom Select */
 .customSelect {
-  /* min-width: 350px; */
   position: relative;
 }
 
@@ -55,7 +41,7 @@
   appearance: none;
   /* safari */
   -webkit-appearance: none;
-  /* other styles for aesthetics */
+  /* For Aesthetics */
   width: 100%;
   /* font-size: 1.15rem; */
   /* padding: 0.675em 6em 0.675em 1em; */
@@ -89,3 +75,10 @@
   top: 50%;
 }
 /* End Custom Select */
+
+@media screen and (max-width: 900px) {
+  .filtersForm {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

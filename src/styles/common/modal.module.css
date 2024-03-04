@@ -13,26 +13,39 @@
 .modalInnerContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
+  gap: 16px;
   background-color: #f5f5f5;
   padding: 20px;
   border-radius: 16px;
+  min-width: 40%;
 }
+
 .modalTitleContainer {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .modalTitleContainer h2 {
   font-size: 1.5rem;
+  flex-grow: 1;
+}
+
+.modalTitleContainer button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modalContentContainer {
   background-color: white;
   border: solid 1px #bdbdbd;
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 8px;
+  padding: 16px;
 }
 
 .modalFooterContainer {

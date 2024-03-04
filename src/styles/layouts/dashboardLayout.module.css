@@ -1,0 +1,9 @@
+.containerMain {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  min-height: calc(100vh - 60px);
+}
+
+.containerOutlet {
+  padding: 16px;
+}

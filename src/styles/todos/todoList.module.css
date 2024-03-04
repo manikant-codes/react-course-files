@@ -1,0 +1,50 @@
+.todoListContainer {
+  background-color: #eeeeee;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listItemContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.listItemContainer:hover {
+  border: solid 1px #bdbdbd;
+}
+
+.listItemContainer input[type="checkbox"] {
+  height: 16px;
+  width: 16px;
+}
+
+.taskPara {
+  flex-grow: 1;
+}
+
+.btn {
+  width: 35px;
+  height: 35px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnEdit {
+  background-color: #424242;
+}
+
+.btnEdit:hover {
+  background-color: #212121;
+}
+
+.btnDelete {
+}

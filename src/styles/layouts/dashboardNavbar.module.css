@@ -8,6 +8,9 @@
   height: 60px;
 }
 
+/* .logoContainer {
+} */
+
 .logo {
   color: white;
   margin: 0px;
@@ -34,12 +37,13 @@
   text-decoration: underline;
 }
 
-.logoutBtn {
-  padding: 8px 16px;
+.menuIcon {
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
-  /* .links {
+  .links li:first-child {
     display: none;
-  } */
+  }
 }

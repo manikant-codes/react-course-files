@@ -1,0 +1,43 @@
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 16px;
+  gap: 16px;
+}
+
+.statCardContainer {
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.statCardContainer:nth-child(1) {
+  background-color: #fbe9e7;
+  border-bottom: 4px #f44336 solid;
+}
+
+.statCardContainer:nth-child(2) {
+  background-color: #e8f5e9;
+  border-bottom: 4px #4caf50 solid;
+}
+
+.statCardContainer:nth-child(3) {
+  background-color: #e1f5fe;
+  border-bottom: 4px #03a9f4 solid;
+}
+
+.statCardContainer h2 {
+  font-size: 1rem;
+}
+
+.statCardContainer p {
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+  }
+}
